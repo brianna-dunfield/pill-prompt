@@ -117,11 +117,10 @@ Add Pill Form:
 Pill Reminder:
 <br/>
 ![image](https://github.com/user-attachments/assets/f416f5d1-4294-4e21-9070-f7ffd3f42517)
-<br/>
 
 ### Data
-<br>
 ![image](https://github.com/user-attachments/assets/f412dca2-b4a7-4ff4-96bb-f6b844e3b29d)
+<br>
 <br>
 ### Endpoints
 GET/users
