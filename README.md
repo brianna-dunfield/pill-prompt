@@ -10,7 +10,7 @@ Caretaker burden is the strain placed on a caretaker as a result of caring for a
 
 ### User Profile
 
-Who will use your app? How will they use it? Add any special considerations that your app must take into account.
+This sprint will have one default user with no authentication.
 
 - Older-Adults:
     - being cared for by a caretaker and whom take medication
@@ -50,7 +50,7 @@ Who will use your app? How will they use it? Add any special considerations that
 
 ### APIs
 
-RxPhotos database by Vigilance Sante.
+Creating own.
 
 ### Sitemap
 
@@ -62,16 +62,11 @@ RxPhotos database by Vigilance Sante.
 ### Mockups
 
 
-
 <u>Mobile View</u>
 <br/>
 Home Page:
 <br/>
 ![image](https://github.com/user-attachments/assets/7c7bb622-be09-45de-92dd-8d82cacb4ac6)
-<br/>
-Login:
-<br>
-![image](https://github.com/user-attachments/assets/06ba7daf-f889-4b3f-be1f-4364364b3636)
 <br>
 Pill List:
 <br/>
@@ -90,10 +85,6 @@ Pill Reminder:
 Home Page:
 <br/>
 ![image](https://github.com/user-attachments/assets/8e3c1e1e-c091-4974-b155-c31957bafd5e)
-<br/>
-Login Page:
-<br/>
-![image](https://github.com/user-attachments/assets/351e9450-0689-4808-be81-0dbdc0cda38f)
 <br/>
 Pill List:
 <br/>
@@ -114,10 +105,6 @@ Home Page:
 <br/>
 ![image](https://github.com/user-attachments/assets/29288d19-64a2-4c40-8012-ed817006d93b)
 <br/>
-Login Page:
-<br/>
-![image](https://github.com/user-attachments/assets/7d50bc3e-075f-45bc-b255-4833219588cf)
-<br/>
 Pill List:
 <br/>
 ![image](https://github.com/user-attachments/assets/5c5c0f43-2eec-4645-a2ab-a85fd78b06fc)
@@ -135,40 +122,8 @@ Pill Reminder:
 <br>
 <br>
 ### Endpoints
-GET/users
-- Returns list of users
-Parameters:
-  -N/A
-Example return data:
-```
-[
-    {
-        "id": "1",
-        "userId": "1",
-        "user_medication": "1",
-        "user_name": "jane_doe"
-    },
-    ...
-]
-```
-
-GET/user/:id/auth
-- Returns the user authentication information
-Parameters:
-  - Id of the user being requested.
-Example return data:
-```
-{
-  "id": "1",
-  "user_name": "jane_doe",
-  "user_password": "abcdfg123"
-}
-```
-
-GET/user/:id/medication
+GET/medication
 - Returns a list of the users medication.
-Parameters:
- - User Id
 Example return data:
 ```
 [
@@ -182,23 +137,9 @@ Example return data:
     ...
 ]
 ```
-GET/medication/photo/:medicationId
+GET/medication/photo/:medicationName
 - Returns the image associated with the medication.
 Returned from external database.
-
-POST/user
-- Adds a new user to the database.
-- Creates the required tables for the user.
-Parameters:
-- Username
-- Password
-Example post:
-```
-{
-  "user_name": "jane_doe",
-  "password": "abcdfg123"
-}
-```
 
 POST/medication
 - Adds the users medication to the list.
@@ -230,7 +171,6 @@ September 12th:
 
 September 13th:
 - Make front end global variables and mixins.
-- Add user Auth.
 
 September 14th:
 - Add backend functionality for get and post requests.
@@ -262,6 +202,7 @@ September 19th:
 ---
 
 ## Future Implementations
+- User authentication
 - Future implementations would be to add the ability to have the ability to have a caretaker be notified if their loved one has not taken their medication. This would result in the caretaker receiving an email after 30 minutes have passed and the user has not taken their medication.
 - Medication History Log stating what days and doses the user has missed/taken.
 
