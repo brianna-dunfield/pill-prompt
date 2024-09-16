@@ -1,17 +1,25 @@
 @use './variables.scss' as *;
-body{
-    margin: 0 1rem;
-    background-color: $PRIMARY-BG;
-    color: $PRIMARY-TXT;
+@use './mixins' as *;
+body {
+	margin: 0 $MARGIN;
+	background-color: $PRIMARY-BG;
+	color: $PRIMARY-TXT;
+	font-family: 'Open Sans';
+	@include tablet {
+		margin: 0 $TABLET-MARGIN;
+	}
+	@include desktop {
+		margin: 0 $DESKTOP-MARGIN;
+	}
 }
 
-p{
-    font-size: 14px;
-    line-height: 24px;
+p {
+	font-size: 14px;
+	line-height: 24px;
 }
 
-h1{
-    font-size: 24px;
-    line-height: 36px;
-    color: $HEADER-TXT;
+h1 {
+	font-size: 24px;
+	line-height: 36px;
+	color: $HEADER-TXT;
 }
