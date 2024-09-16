@@ -1,0 +1,17 @@
+@use './variables.scss' as *;
+body{
+    margin: 0 1rem;
+    background-color: $PRIMARY-BG;
+    color: $PRIMARY-TXT;
+}
+
+p{
+    font-size: 14px;
+    line-height: 24px;
+}
+
+h1{
+    font-size: 24px;
+    line-height: 36px;
+    color: $HEADER-TXT;
+}
