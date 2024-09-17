@@ -1,13 +1,45 @@
 @use './variables.scss' as *;
 
 @mixin tablet {
-    @media screen and (min-width: $TABLET-BREAKPOINT){
-        @content;
-    }
+	@media screen and (min-width: $TABLET-BREAKPOINT) {
+		@content;
+	}
 }
 
 @mixin desktop {
-    @media screen and (min-width: $DESKTOP-BREAKPOINT){
-        @content;
-    }
+	@media screen and (min-width: $DESKTOP-BREAKPOINT) {
+		@content;
+	}
+}
+
+@mixin btn(
+	$bg-color: $BTN-BG,
+	$border: none,
+	$color: $BTN-TXT,
+	$hover-bg-color: null,
+	$hover-border-color: null
+) {
+	height: 2.5rem;
+	width: 100%;
+	border-radius: 1.25rem;
+	font-weight: 400;
+	background-color: $bg-color;
+	border: $border;
+	color: $color;
+    text-align: center;
+    line-height: 2.5rem;
+    font-size: 1.125rem;
+
+	&:hover {
+		@if $hover-bg-color {
+			background-color: $hover-bg-color;
+		}
+		@if $hover-border-color {
+			border-color: $hover-border-color;
+		}
+	}
+	@include tablet {
+		padding: 0.5rem 1rem;
+		width: fit-content;
+	}
 }
