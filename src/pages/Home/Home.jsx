@@ -1,8 +1,9 @@
 import './Home.scss';
-import ContentBox from '../../components/ContentBox/ContentBox.jsx';
+import Header from '../../components/Header/Header.jsx';
 
 export default function Home(){
-    return <>
-    <ContentBox />
-    </>
+    return <main className='home'>
+    <Header headerText={'Home'} returnUrl={'/'} editUrl={'/'}/>
+    <p>Hello</p>
+    </main>
 }
