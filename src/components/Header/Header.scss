@@ -1,3 +1,37 @@
 @use '../../styles/partials/variables.scss' as *;
 @use '../../styles/partials/mixins.scss' as *;
 
+.header{
+    padding: 1rem;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-left{
+        display:flex;
+        gap: 1rem;
+    }
+    &__back-img{
+        height: 2rem;
+        width: 2rem;
+        &:hover{
+            @include zoom-hover;
+        }
+    }
+    &__text{
+        margin: 0;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    &__add-img{
+        border-radius: 50%;
+        background-color: $NAV-BG;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.25rem;
+        &:hover{
+            @include zoom-hover;
+        }
+    }
+}
