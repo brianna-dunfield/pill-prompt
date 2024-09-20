@@ -16,9 +16,9 @@ export default function NavBar() {
 
 			<Link
 				className='nav__button'
-				to='/'
+				to='/medications/1'
 			>
-				Login
+				User 1's Medications
 			</Link>
 		</nav>
 	);

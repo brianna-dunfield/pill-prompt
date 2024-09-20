@@ -1,0 +1,29 @@
+@use '../../styles/partials/variables.scss' as *;
+
+.medication{
+    padding: 1rem;
+    border-bottom: 1px solid $PRIMARY-TXT;
+    display: flex;
+    gap: 1rem;
+    align-content: center;
+
+    &__img{
+        width: 150px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    &__information{
+        &-label{
+            margin: 0 0 4px 0;
+            font-size: 10px;
+            color: $LABEL-TXT;
+        }
+        &-text{
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+}
