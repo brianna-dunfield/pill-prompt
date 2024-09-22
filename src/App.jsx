@@ -5,6 +5,7 @@ import Home from './pages/Home/Home.jsx';
 import MedicationDisplay from './pages/MedicationDisplay/MedicationDisplay.jsx';
 import AddMedication from './pages/AddMedication/AddMedication.jsx';
 import Prompt from './pages/Prompt/Prompt.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 						element={<Prompt />}
 					/>
 				</Routes>
+				<Footer/>
 			</BrowserRouter>
 		</>
 	);

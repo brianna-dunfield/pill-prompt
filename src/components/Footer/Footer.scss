@@ -1,0 +1,7 @@
+@use '../../styles/partials/variables.scss' as *;
+
+footer{
+    color: $LABEL-TXT;
+    margin: 1rem auto;
+    text-align: center;
+}
