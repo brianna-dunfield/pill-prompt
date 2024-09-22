@@ -44,4 +44,21 @@
         @extend .prompt__dose-info;
         
     }
+    &__navigation{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        gap: 1rem;
+        &>button{
+            font-size: 16px;
+            background-color: none;
+            font-weight: 600;
+            @include btn($SECONDARY-BG, 1px solid $BTN-BG, $BTN-BG, $BTN-BG, none, white);
+        }
+        
+    }
+}
+
+.hide{
+    visibility: hidden;
 }

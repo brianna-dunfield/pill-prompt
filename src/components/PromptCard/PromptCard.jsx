@@ -4,7 +4,13 @@ import { getIndividualMedication } from '../../utils/api.js';
 import check from '../../assets/icons/checkInCircle.svg';
 import reminder from '../../assets/icons/reminder.svg';
 
-export default function PromptCard({ medicationName, userId }) {
+export default function PromptCard({
+	medicationName,
+	userId,
+	first = false,
+	last = false,
+	setCurrentMedication,
+}) {
 	const [medicationInformation, setMedicationInformation] = useState();
 
 	useEffect(() => {
@@ -14,7 +20,6 @@ export default function PromptCard({ medicationName, userId }) {
 					userId,
 					medicationName
 				);
-				console.log(result.data);
 				setMedicationInformation(result.data);
 			} catch (error) {
 				console.error(
@@ -30,6 +35,14 @@ export default function PromptCard({ medicationName, userId }) {
 	if (!medicationInformation) {
 		return <p>Loading...</p>;
 	}
+
+	const handleNextClick = () => {
+		setCurrentMedication((prevMedication) => prevMedication - 1);
+	};
+
+	const handlePreviousClick = () => {
+		setCurrentMedication((prevMedication) => prevMedication + 1);
+	};
 
 	return (
 		<article className='prompt'>
@@ -79,6 +92,33 @@ export default function PromptCard({ medicationName, userId }) {
 					src={reminder}
 					alt='Yellow clock'
 				/>
+			</div>
+			<div className='prompt__navigation'>
+				{first ? (
+					<button
+						onClick={handleNextClick}
+						className='hide'
+					>
+						PREVIOUS
+					</button>
+				) : (
+					<button onClick={handleNextClick}>PREVIOUS</button>
+				)}
+				{last ? (
+					<button
+						className='hide'
+						onClick={handlePreviousClick}
+					>
+						NEXT
+					</button>
+				) : (
+					<button
+						className='prompt__navigation-next {}'
+						onClick={handlePreviousClick}
+					>
+						NEXT
+					</button>
+				)}
 			</div>
 		</article>
 	);
