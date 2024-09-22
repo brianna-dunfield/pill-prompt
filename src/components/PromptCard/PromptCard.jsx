@@ -1,6 +1,8 @@
 import './PromptCard.scss';
 import { useEffect, useState } from 'react';
 import { getIndividualMedication } from '../../utils/api.js';
+import check from '../../assets/icons/checkInCircle.svg';
+import reminder from '../../assets/icons/reminder.svg';
 
 export default function PromptCard({ medicationName, userId }) {
 	const [medicationInformation, setMedicationInformation] = useState();
@@ -37,14 +39,20 @@ export default function PromptCard({ medicationName, userId }) {
 				src={`http://localhost:8080/images/${medicationName}.jpg`}
 				alt={`${medicationName} pill image`}
 			/>
-			<p className='prompt__label'>Medication Name</p>
-			<p className='prompt__info'>
-				{medicationInformation.medication_name}
-			</p>
-			<p className='prompt__label'>Time of Dose</p>
-			<p className='prompt__info'>
-				{medicationInformation.medication_dose_time}
-			</p>
+			<div className='prompt__main-info'>
+				<div>
+					<p className='prompt__label'>Medication Name</p>
+					<p className='prompt__info'>
+						{medicationInformation.medication_name}
+					</p>
+				</div>
+				<div>
+					<p className='prompt__label'>Time of Dose</p>
+					<p className='prompt__info'>
+						{medicationInformation.medication_dose_time}
+					</p>
+				</div>
+			</div>
 			<div className='prompt__dose-info'>
 				<div>
 					<p className='prompt__label'>Number of Tablets</p>
@@ -60,16 +68,16 @@ export default function PromptCard({ medicationName, userId }) {
 					</p>
 				</div>
 			</div>
-			<div>
+			<div className='prompt__option'>
 				<img
-					className='prompt__yes-image'
-					src=''
-					alt=''
+					className='prompt__option-yes'
+					src={check}
+					alt='Green checkmark in a green circle'
 				/>
 				<img
-					className='prompt__later-image'
-					src=''
-					alt=''
+					className='prompt__option-later'
+					src={reminder}
+					alt='Yellow clock'
 				/>
 			</div>
 		</article>
