@@ -1,0 +1,34 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.prompt{
+    @include content-box;
+    padding: 1rem;
+    width: fit-content;
+    &__header{
+        margin-top: 0.5rem;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.50);
+        margin: 0 -1rem 1.5rem -1rem;
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+    &__image{
+        width: 100%;
+        border-radius: 1.25rem;
+        margin: auto;
+    }
+    &__label{
+        margin-bottom: 0;
+        font-size: .625rem;
+    }
+    &__info{
+        margin-top: .25rem;
+        font-size: 1rem;
+    }
+    &__dose-info{
+        display: flex;
+        justify-content: space-between;
+        &>div{
+            width: 50%;
+        }
+    }
+}
