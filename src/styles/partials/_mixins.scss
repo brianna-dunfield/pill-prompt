@@ -16,9 +16,9 @@
 	$bg-color: $BTN-BG,
 	$border: none,
 	$color: $BTN-TXT,
-	$hover-bg-color: null,
-	$hover-border-color: null,
-	$hover-txt-color: null
+	$hover-bg-color: $BTN-TXT,
+	$hover-border-color: $BTN-BG,
+	$hover-txt-color: $BTN-BG
 ) {
 	height: 2.5rem;
 	width: 100%;

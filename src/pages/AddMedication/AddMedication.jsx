@@ -2,10 +2,13 @@ import './AddMedication.scss';
 import Header from '../../components/Header/Header.jsx';
 import { useParams, useNavigate } from 'react-router-dom';
 import { postNewMedication } from '../../utils/api.js';
+import { useState } from 'react';
+import SuccessModal from '../../components/SuccessModal/SuccessModal.jsx';
 
 export default function AddMedication() {
 	const { userId } = useParams();
 	const navigate = useNavigate();
+	const [modalState, setModalState] = useState(false);
 
 	async function handleFormSubmit(event) {
 		event.preventDefault();
@@ -20,6 +23,16 @@ export default function AddMedication() {
 			medication_dose_time: target.medication_dose_time.value,
 		};
 
+		if (
+			!newMedication.medication_name ||
+			!newMedication.user_dosage ||
+			!newMedication.pill_dosage ||
+			!newMedication.medication_dose_time
+		) {
+			console.error('All form fields must be filled.');
+			return;
+		}
+
 		try {
 			await postNewMedication(userId, newMedication);
 		} catch (error) {
@@ -28,7 +41,7 @@ export default function AddMedication() {
 				error
 			);
 		}
-		navigate(`/medications/${userId}`, { replace: true });
+		setModalState(true);
 	}
 
 	return (
@@ -84,6 +97,12 @@ export default function AddMedication() {
 				</label>
 				<button className='new-medication__submit'>Submit</button>
 			</form>
+			{modalState ? (
+				<SuccessModal
+					setModalStatus={setModalState}
+					navigateTo={`medications/${userId}`}
+				/>
+			) : null}
 		</main>
 	);
 }
