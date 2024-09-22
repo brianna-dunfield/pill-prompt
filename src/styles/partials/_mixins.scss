@@ -17,7 +17,8 @@
 	$border: none,
 	$color: $BTN-TXT,
 	$hover-bg-color: null,
-	$hover-border-color: null
+	$hover-border-color: null,
+	$hover-txt-color: null
 ) {
 	height: 2.5rem;
 	width: 100%;
@@ -33,6 +34,7 @@
 	&:hover {
 		@if $hover-bg-color {
 			background-color: $hover-bg-color;
+			color: $hover-txt-color;
 		}
 		@if $hover-border-color {
 			border-color: $hover-border-color;
