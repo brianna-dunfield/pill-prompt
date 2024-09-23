@@ -95,7 +95,9 @@ export default function AddMedication() {
 						className='new-medication__input'
 					/>
 				</label>
-				<button className='new-medication__submit'>Submit</button>
+				<div className='new-medication__submit-box'>
+					<button className='new-medication__submit'>Submit</button>
+				</div>
 			</form>
 			{modalState ? (
 				<SuccessModal

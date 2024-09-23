@@ -16,5 +16,12 @@
     &__submit{
         margin: 1rem 0;
         @include btn($BTN-BG, none, $BTN-TXT, $BTN-TXT, $BTN-BG, $BTN-BG);
+        &-box{
+            @include tablet{
+                display: flex;
+                justify-content: flex-end;
+                margin: 0 2rem;
+            }
+        }
     }
 }
