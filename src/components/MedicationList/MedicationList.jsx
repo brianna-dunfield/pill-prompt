@@ -27,7 +27,13 @@ export default function MedicationList({ userId }) {
 		});
 	}
 
-	return <section>
+	return <section className='medication-list'>
+		<div className='medication-list__bar'>
+			<p>Image</p>
+			<p>Medication Name</p>
+			<p>Dose</p>
+			<p>Dose Time</p>
+		</div>
         {userMedications.map((medication, index)=>{
             return <MedicationListRow key={index} medicationName={medication.medication_name} medicationDosage={medication.user_dosage} medicationTime={medication.medication_dose_time}/>
         })}
