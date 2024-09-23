@@ -3,6 +3,6 @@ import Header from '../../components/Header/Header.jsx';
 
 export default function Home(){
     return <main className='home'>
-    <p>Hello</p>
+    <h1>Help keep track of your medications</h1>
     </main>
 }

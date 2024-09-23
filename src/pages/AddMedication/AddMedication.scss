@@ -1,9 +1,19 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/variables.scss' as *;
 
+.page-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .new-medication{
     padding: 1rem;
-    @include content-box;
+    @include desktop{
+        width: 42rem;
+        margin: auto;
+    }
+    & {@include content-box;}
     & p{
         margin-bottom: 4px;
     }
@@ -16,5 +26,13 @@
     &__submit{
         margin: 1rem 0;
         @include btn($BTN-BG, none, $BTN-TXT, $BTN-TXT, $BTN-BG, $BTN-BG);
+        &-box{
+            @include tablet{
+                display: flex;
+                justify-content: flex-end;
+                margin: 0 2rem;
+            }
+            
+        }
     }
 }
