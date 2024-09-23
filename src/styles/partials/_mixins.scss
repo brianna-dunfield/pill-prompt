@@ -1,0 +1,61 @@
+@use './variables.scss' as *;
+
+@mixin tablet {
+	@media screen and (min-width: $TABLET-BREAKPOINT) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media screen and (min-width: $DESKTOP-BREAKPOINT) {
+		@content;
+	}
+}
+
+@mixin btn(
+	$bg-color: $BTN-BG,
+	$border: none,
+	$color: $BTN-TXT,
+	$hover-bg-color: $BTN-TXT,
+	$hover-border-color: $BTN-BG,
+	$hover-txt-color: $BTN-BG
+) {
+	height: 2.5rem;
+	width: 100%;
+	border-radius: 1.25rem;
+	font-weight: 400;
+	background-color: $bg-color;
+	border: $border;
+	color: $color;
+	text-align: center;
+	line-height: 2.5rem;
+	font-size: 1.125rem;
+
+	&:hover {
+		@if $hover-bg-color {
+			background-color: $hover-bg-color;
+			color: $hover-txt-color;
+		}
+		@if $hover-border-color {
+			border: 1px solid $hover-border-color;
+		}
+		cursor: pointer;
+	}
+	@include tablet {
+		padding: 0.5rem 1rem;
+		width: fit-content;
+	}
+}
+
+@mixin content-box {
+	height: 100%;
+	border: var(--sds-size-stroke-border) solid rgba(0, 0, 0, 0.2);
+	background: $SECONDARY-BG;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin: 1rem 0;
+}
+
+@mixin zoom-hover {
+	transition: transform 0.3s ease;
+	transform: scale(1.05);
+}

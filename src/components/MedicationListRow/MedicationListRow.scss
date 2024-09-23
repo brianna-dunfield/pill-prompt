@@ -1,0 +1,39 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+.medication{
+    padding: 1rem;
+    border-bottom: .0625rem solid $PRIMARY-TXT;
+    display: flex;
+    gap: 1rem;
+    align-content: center;
+
+    &__img{
+        width: 9.375rem;
+        height: 7.8125rem;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+
+    &__information{
+        @include tablet{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        &-label{
+            margin: 0 0 .25rem 0;
+            font-size: .625rem;
+            color: $LABEL-TXT;
+            @include tablet{
+                display: none;
+            }
+        }
+        &-text{
+            margin: 0;
+            font-size: 1rem;
+            width: 25%;
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+@use '../../styles/partials/mixins.scss' as *;
+
+.medication-list__bar{
+    display: none;
+    @include tablet{
+        display: flex;
+        width: 95.5%;
+        justify-content: space-between;
+        padding: 0 1rem;
+        background-color: #E0E0E0;
+        margin-right: 2rem;
+        & p{
+            width: 25%;
+        }
+    }
+}

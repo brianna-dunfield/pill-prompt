@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixins.scss' as *;
+
+.home{
+    @include content-box;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

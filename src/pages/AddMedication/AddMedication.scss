@@ -1,0 +1,38 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.page-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.new-medication{
+    padding: 1rem;
+    @include desktop{
+        width: 42rem;
+        margin: auto;
+    }
+    & {@include content-box;}
+    & p{
+        margin-bottom: 4px;
+    }
+    &__input{
+        width: 90%;
+        padding: 1rem;
+        border: 1px solid rgba(51, 51, 51, 0.50);
+        border-radius: 40px;
+    }
+    &__submit{
+        margin: 1rem 0;
+        @include btn($BTN-BG, none, $BTN-TXT, $BTN-TXT, $BTN-BG, $BTN-BG);
+        &-box{
+            @include tablet{
+                display: flex;
+                justify-content: flex-end;
+                margin: 0 2rem;
+            }
+            
+        }
+    }
+}

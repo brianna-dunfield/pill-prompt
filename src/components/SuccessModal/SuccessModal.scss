@@ -1,0 +1,33 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.success-modal__overlay {
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.success-modal{
+    @include content-box;
+    width: 90%;
+    padding: 1rem;
+    box-sizing: border-box;
+    &__close{
+        float: right;
+        background-color: $BTN-TXT;
+        border-radius: 50%;
+        border: 2px solid $PRIMARY-TXT;
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+    &__return{
+        @include btn;
+    }
+}
