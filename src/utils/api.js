@@ -9,3 +9,7 @@ export const getUserMedication = (userId) => {
 export const getIndividualMedication = (userId, medicationName) =>{
 	return axios.get(`${API_URL}/medications/${userId}/${medicationName}`);
 }
+
+export const postNewMedication = (userId, medicationObject) => {
+	return axios.post(`${API_URL}/medications/${userId}`, medicationObject);
+}

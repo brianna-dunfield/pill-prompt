@@ -16,9 +16,9 @@
 	$bg-color: $BTN-BG,
 	$border: none,
 	$color: $BTN-TXT,
-	$hover-bg-color: null,
-	$hover-border-color: null,
-	$hover-txt-color: null
+	$hover-bg-color: $BTN-TXT,
+	$hover-border-color: $BTN-BG,
+	$hover-txt-color: $BTN-BG
 ) {
 	height: 2.5rem;
 	width: 100%;
@@ -37,8 +37,9 @@
 			color: $hover-txt-color;
 		}
 		@if $hover-border-color {
-			border-color: $hover-border-color;
+			border: 1px solid $hover-border-color;
 		}
+		cursor: pointer;
 	}
 	@include tablet {
 		padding: 0.5rem 1rem;
@@ -48,7 +49,6 @@
 
 @mixin content-box {
 	height: 100%;
-	width: 100%;
 	border: var(--sds-size-stroke-border) solid rgba(0, 0, 0, 0.2);
 	background: $SECONDARY-BG;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
