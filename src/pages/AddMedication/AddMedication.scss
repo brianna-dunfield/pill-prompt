@@ -1,9 +1,19 @@
 @use '../../styles/partials/mixins.scss' as *;
 @use '../../styles/partials/variables.scss' as *;
 
+.page-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .new-medication{
     padding: 1rem;
-    @include content-box;
+    @include desktop{
+        width: 42rem;
+        margin: auto;
+    }
+    & {@include content-box;}
     & p{
         margin-bottom: 4px;
     }
@@ -22,6 +32,7 @@
                 justify-content: flex-end;
                 margin: 0 2rem;
             }
+            
         }
     }
 }

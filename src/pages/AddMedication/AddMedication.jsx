@@ -45,66 +45,70 @@ export default function AddMedication() {
 	}
 
 	return (
-		<main className='new-medication'>
-			<Header
-				headerText={'Add Medication'}
-				returnUrl={`/medications/${userId}`}
-			/>
-			<form
-				className='new-medication__form'
-				onSubmit={handleFormSubmit}
-				id='new-medication__form'
-			>
-				<label htmlFor='medication_name'>
-					<p>Medication Name</p>
-					<input
-						type='text'
-						id='medication_name'
-						name='medication_name'
-						placeholder='Medication Name'
-						className='new-medication__input'
-					/>
-				</label>
-				<label htmlFor='user_dosage'>
-					<p>Medication Dosage (mg/ml)</p>
-					<input
-						type='text'
-						id='user_dosage'
-						name='user_dosage'
-						placeholder='Medication Dosage'
-						className='new-medication__input'
-					/>
-				</label>
-				<label htmlFor='pill_dosage'>
-					<p>Individual Pill Dosage (mg/ml)</p>
-					<input
-						type='text'
-						id='pill_dosage'
-						name='pill_dosage'
-						placeholder='Pill Dosage'
-						className='new-medication__input'
-					/>
-				</label>
-				<label htmlFor='medication_dose_time'>
-					<p>Dosage Time</p>
-					<input
-						type='time'
-						id='medication_dose_time'
-						name='medication_dose_time'
-						placeholder='Dosage time'
-						className='new-medication__input'
-					/>
-				</label>
-				<div className='new-medication__submit-box'>
-					<button className='new-medication__submit'>Submit</button>
-				</div>
-			</form>
-			{modalState ? (
-				<SuccessModal
-					setModalStatus={setModalState}
-					navigateTo={`medications/${userId}`}
+		<div className='page-body'>
+			<main className='new-medication'>
+				<Header
+					headerText={'Add Medication'}
+					returnUrl={`/medications/${userId}`}
 				/>
-			) : null}
-		</main>
+				<form
+					className='new-medication__form'
+					onSubmit={handleFormSubmit}
+					id='new-medication__form'
+				>
+					<label htmlFor='medication_name'>
+						<p>Medication Name</p>
+						<input
+							type='text'
+							id='medication_name'
+							name='medication_name'
+							placeholder='Medication Name'
+							className='new-medication__input'
+						/>
+					</label>
+					<label htmlFor='user_dosage'>
+						<p>Medication Dosage (mg/ml)</p>
+						<input
+							type='text'
+							id='user_dosage'
+							name='user_dosage'
+							placeholder='Medication Dosage'
+							className='new-medication__input'
+						/>
+					</label>
+					<label htmlFor='pill_dosage'>
+						<p>Individual Pill Dosage (mg/ml)</p>
+						<input
+							type='text'
+							id='pill_dosage'
+							name='pill_dosage'
+							placeholder='Pill Dosage'
+							className='new-medication__input'
+						/>
+					</label>
+					<label htmlFor='medication_dose_time'>
+						<p>Dosage Time</p>
+						<input
+							type='time'
+							id='medication_dose_time'
+							name='medication_dose_time'
+							placeholder='Dosage time'
+							className='new-medication__input'
+						/>
+					</label>
+					<div className='new-medication__submit-box'>
+						<button className='new-medication__submit'>
+							Submit
+						</button>
+					</div>
+				</form>
+				{modalState ? (
+					<SuccessModal
+						setModalStatus={setModalState}
+						navigateTo={`medications/${userId}`}
+					/>
+				) : null}
+			</main>
+		</div>
 	);
 }
