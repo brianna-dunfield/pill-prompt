@@ -6,11 +6,13 @@ export default function MedicationListRow({
 	medicationTime,
 }) {
 
+	const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
 	return (
 		<article className='medication'>
 			<img
 				className='medication__img'
-				src={`http://localhost:8080/images/${medicationName}.jpg`}
+				src={`${API_URL}/images/${medicationName}.jpg`}
 				alt={`${medicationName} pill`}
 			/>
 			<div className='medication__information'>
