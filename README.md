@@ -1,5 +1,7 @@
 # PillPrompt
 
+Check out the deployed first sprint here: https://66f5b013778c4d300ceb3f5e--pill-prompt.netlify.app/
+
 ## Overview
 
 PillPrompt is a medication alert application that notifies the user when to take their medications and notifies their caretakers if they did not take their medications.
